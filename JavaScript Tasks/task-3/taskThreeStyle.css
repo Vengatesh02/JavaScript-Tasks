@@ -1,0 +1,11 @@
+#input{
+    width: 500px;
+    height: 50px;
+    font-size: large;
+}
+
+#display{
+    width: 500px;
+    height: 50px;
+    font-size: larger;
+}
