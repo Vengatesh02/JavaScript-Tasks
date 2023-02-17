@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            row-gap: 10px;
+        }
+
+        #red,
+        #blue,
+        #violet,
+        #green {
+            height: 250px;
+            width: 600px;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #violet {
+            background-color: violet;
+        }
+
+        #green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="red"></div>
+    <div id="blue"></div>
+    <div id="violet"></div>
+    <div id="green"></div>
+
+    <script>
+        let box = document.querySelectorAll('div');
+        let pervious = null;
+        box.forEach((element) => {
+            element.addEventListener('click', function () {
+                // if previous have element the element's display property will changed to block  
+                if (pervious) {
+                    pervious.style.display = 'block';
+                }
+                // current element will have display property none
+                this.style.display = 'none';
+                // current element will be assigned to pervious variable
+                pervious = this;
+            });
+        });
+    </script>
+</body>
+
+</html>

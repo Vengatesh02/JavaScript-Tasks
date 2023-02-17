@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range divisible</title>
+
+    <style>
+        body {
+            font-size: large;
+        }
+
+        input {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <label for="rangeFrom">Range From</label>
+    <input type="number" id="rangeFrom" value="0">
+    <label for="rangeTo">Range To</label>
+    <input type="number" id="rangeTo" value="100">
+    <label for="divisibleBy">Divisible value</label>
+    <input type="number" id="divisibleBy" required>
+    <button id="submit">Submit</button>
+    <span id="display"></span>
+
+    <script>
+
+        let button = document.querySelector("#submit");
+        button.addEventListener('click', function () {
+            // declaration of empty array
+            let result = []
+            let initialValue = document.querySelector('#rangeFrom').value;
+            let finalValue = document.querySelector('#rangeTo').value;
+            let divisibleNumber = document.querySelector('#divisibleBy').value;
+            // looping to get every number from RangeFrom to RangeTo 
+            for (let i = initialValue; i <= finalValue; i++) {
+                if (i % divisibleNumber === 0) {
+                    result.push(i)
+                }
+            }
+            // array is converted to string and displayed in span element
+            document.querySelector('#display').innerHTML = result.join(' ');
+        })
+
+    </script>
+</body>
+
+</html>
