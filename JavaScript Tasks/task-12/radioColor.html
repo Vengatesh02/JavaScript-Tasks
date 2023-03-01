@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Color</title>
+
+    <style>
+        #display {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: calc(50% - 100px);
+            border: 2px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="radio-form">
+        <input type="radio" id="red" value="#FF0000" name="color">
+        <label for="red">#FF0000</label>
+        <input type="radio" id="cyan" value="#00FFFF" name="color">
+        <label for="cyan">#00FFFF</label>
+        <input type="radio" id="blue" value="#0000FF" name="color">
+        <label for="blue">#0000FF</label>
+        <input type="radio" id="dark-blue" value="#00008B" name="color">
+        <label for="dark-blue">#00008B</label>
+        <input type="radio" id="yellow" value="#FFFF00" name="color">
+        <label for="yellow">#FFFF00</label>
+        <input type="radio" id="lime" value="#00FF00" name="color">
+        <label for="lime">#00FF00</label>
+        <input type="radio" id="magenta" value="#FF00FF" name="color">
+        <label for="magenta">#FF00FF</label>
+        <input type="radio" id="maroon" value="#800000" name="color">
+        <label for="maroon">#800000</label>
+        <input type="radio" id="olive" value="#808000" name="color">
+        <label for="olive">#808000</label>
+        <input type="radio" id="orange" value="#FFA500" name="color">
+        <label for="orange">#FFA500</label>
+    </form>
+    <div id="display"></div>
+
+    <script>
+        let forms = document.querySelector('#radio-form');
+        let box = document.querySelector('#display');
+
+        forms.addEventListener('click', (event) => {
+            box.style.backgroundColor = event.target.getAttribute('value');
+        })
+
+    </script>
+</body>
+
+</html>
